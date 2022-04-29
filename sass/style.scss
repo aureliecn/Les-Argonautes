@@ -1,0 +1,113 @@
+// Import des fichiers partiels
+@use "variables" as v;
+@use "reset" as r;
+@use "mixins" as m;
+header{
+    background-color: v.$header-background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 5rem;
+    .logo{
+        width: 15%;
+        padding: 0 1rem;
+
+        @media screen and (max-width: 580px) {
+            width: 20%;
+        }
+    }
+    h1{
+        padding: 0 1rem;
+        font-size: v.$title-size*2;
+
+        @media screen and (max-width: 490px) {
+            font-size: v.$title-size*1.5;
+        }
+    }
+}
+
+.add-member{
+    padding: 2rem 0;
+    text-align: center;
+    h2{
+        color: v.$pink-color;
+        padding-bottom: 1rem;
+        font-size: v.$title-size*1.5;
+
+        @media screen and (max-width: 490px){
+            font-size: v.$title-size*1.2;
+        } 
+    }
+
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        
+        label{
+            padding-bottom: 1rem;
+            font-size: v.$title-size*1.2;
+
+            @media screen and (max-width: 490px){
+                font-size: v.$title-size;
+            } 
+        }
+
+        .input-and-submit-wrapper{
+            .input{
+                border: 2px solid v.$pink-color;
+                border-radius: 7%;
+                height: 3rem;
+            }
+
+            .button{
+                @include m.button();
+            }
+        }
+    }
+}
+
+.all-members{
+    padding: 3rem 0;
+    text-align: center;
+    
+
+    h2{
+        color: v.$pink-color;
+        padding-bottom: 2rem;
+        font-size: v.$title-size*1.5;
+
+        @media screen and (max-width: 490px){
+            font-size: v.$title-size*1.2;
+        } 
+    }
+
+    .members{
+        display: flex;
+        flex-wrap: wrap;
+        p{
+            width: 30%;
+            padding-bottom: 0.5rem;
+            font-size: v.$title-size;
+
+            @media screen and (max-width: 580px) {
+                width : 45%;
+                font-size: large;
+            }
+
+        }
+    }
+}
+
+footer{
+    background-color: v.$pink-color;
+    padding: 2rem 0;
+    text-align: center;
+    color: v.$white-color;
+    font-size: v.$title-size;
+
+    @media screen and (max-width: 580px) {
+        font-size: medium;
+    }
+
+}
+

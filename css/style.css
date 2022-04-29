@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Bree Serif", serif;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 5rem;
+}
+header .logo {
+  width: 15%;
+  padding: 0 1rem;
+}
+@media screen and (max-width: 580px) {
+  header .logo {
+    width: 20%;
+  }
+}
+header h1 {
+  padding: 0 1rem;
+  font-size: 4rem;
+}
+@media screen and (max-width: 490px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
+.add-member {
+  padding: 2rem 0;
+  text-align: center;
+}
+.add-member h2 {
+  color: #EF6B6B;
+  padding-bottom: 1rem;
+  font-size: 3rem;
+}
+@media screen and (max-width: 490px) {
+  .add-member h2 {
+    font-size: 2.4rem;
+  }
+}
+.add-member .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.add-member .form-group label {
+  padding-bottom: 1rem;
+  font-size: 2.4rem;
+}
+@media screen and (max-width: 490px) {
+  .add-member .form-group label {
+    font-size: 2rem;
+  }
+}
+.add-member .form-group .input-and-submit-wrapper .input {
+  border: 2px solid #EF6B6B;
+  border-radius: 7%;
+  height: 3rem;
+}
+.add-member .form-group .input-and-submit-wrapper .button {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  color: #EF6B6B;
+  background-color: white;
+  border: 2px solid #EF6B6B;
+  border-radius: 7%;
+  height: 3rem;
+  font-weight: bold;
+}
+.add-member .form-group .input-and-submit-wrapper .button:hover {
+  color: white;
+  background-color: #EF6B6B;
+}
+
+.all-members {
+  padding: 3rem 0;
+  text-align: center;
+}
+.all-members h2 {
+  color: #EF6B6B;
+  padding-bottom: 2rem;
+  font-size: 3rem;
+}
+@media screen and (max-width: 490px) {
+  .all-members h2 {
+    font-size: 2.4rem;
+  }
+}
+.all-members .members {
+  display: flex;
+  flex-wrap: wrap;
+}
+.all-members .members p {
+  width: 30%;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+@media screen and (max-width: 580px) {
+  .all-members .members p {
+    width: 45%;
+    font-size: large;
+  }
+}
+
+footer {
+  background-color: #EF6B6B;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+@media screen and (max-width: 580px) {
+  footer {
+    font-size: medium;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

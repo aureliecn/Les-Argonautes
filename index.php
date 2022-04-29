@@ -31,8 +31,7 @@ if (!empty($_POST)) {
         // J'associe la variable au paramètre
         $query->bindParam(":name", $name);
 
-        if ($query->execute())
-        {
+        if ($query->execute()) {
             header("Location: ./");
         }
     }
@@ -54,6 +53,7 @@ if (!empty($_POST)) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=GFS+Didot&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -64,24 +64,30 @@ if (!empty($_POST)) {
         <h1>Les Argonautes</h1>
     </header>
     <main>
-        <h2>Ajouter un(e) Argonaute</h2>
-        <form action="" method="post">
-            <div class="form-group">
-                <label for="inputName">Nom de l'Argonaute <i class="fa-solid fa-anchor"></i></label>
-                <input type="text" name="name" id="inputName" placeholder="Charalampos">
-                <input type="submit" value="Embarquer !">
-            </div>
-        </form>
+        <div class="add-member">
+            <h2>Ajouter un(e) Argonaute</h2>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="inputName">Nom de l'Argonaute <i class="fa-solid fa-anchor"></i></label>
+                    <div class="input-and-submit-wrapper">
+                        <input type="text" name="name" id="inputName" class="input">
+                        <input type="submit" value="Embarquer !" class="button">
+                    </div>
+                </div>
+            </form>
+        </div>
 
-        <h2>Membres de la team Argonaute <i class="fa-solid fa-skull-crossbones"></i></i></h2>
-        <div class="members">
-            <?php
-            foreach ($members as $member) {
-            ?>
-                <p><?= $member["name"] ?></p>
-            <?php
-            }
-            ?>
+        <div class="all-members">
+            <h2>Membres de la team Argonaute <i class="fa-solid fa-skull-crossbones"></i></i></h2>
+            <div class="members">
+                <?php
+                foreach ($members as $member) {
+                ?>
+                    <p><?= $member["name"] ?></p>
+                <?php
+                }
+                ?>
+            </div>
         </div>
     </main>
 

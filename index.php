@@ -6,6 +6,37 @@ $query = $db->query("
 SELECT name from members
 ");
 $members = $query->fetchAll(PDO::FETCH_ASSOC);
+
+if (!empty($_POST)) {
+    $name = trim(strip_tags($_POST["name"]));
+
+    // Initialisation d'un tableau d'erreurs
+    $errors = [];
+
+    if (empty($name)) {
+        $errors["name"] = "Le champ est obligatoire !";
+    }
+
+    if (empty($errors)) {
+        // Connexion à la base de données
+        $db = new PDO("mysql:host=localhost;dbname=argonaute", "root", "root");
+
+        // Requête pour insertion en base
+        $query = $db->prepare("
+            INSERT INTO members
+            (name)
+            VALUES
+            (:name)
+        ");
+        // J'associe la variable au paramètre
+        $query->bindParam(":name", $name);
+
+        if ($query->execute())
+        {
+            header("Location: ./");
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,11 +76,11 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
         <h2>Membres de la team Argonaute <i class="fa-solid fa-skull-crossbones"></i></i></h2>
         <div class="members">
             <?php
-        foreach ($members as $member) {
+            foreach ($members as $member) {
             ?>
-            <p><?= $member["name"] ?></p>
+                <p><?= $member["name"] ?></p>
             <?php
-        }
+            }
             ?>
         </div>
     </main>

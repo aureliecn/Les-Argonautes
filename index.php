@@ -1,3 +1,12 @@
+<?php
+// Connexion à la base de données
+$db = new PDO("mysql:host=localhost;dbname=argonaute", "root", "root");
+// Requête pour récupérer tous les membres
+$query = $db->query("
+SELECT name from members
+");
+$members = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -35,7 +44,13 @@
 
         <h2>Membres de la team Argonaute <i class="fa-solid fa-skull-crossbones"></i></i></h2>
         <div class="members">
-
+            <?php
+        foreach ($members as $member) {
+            ?>
+            <p><?= $member["name"] ?></p>
+            <?php
+        }
+            ?>
         </div>
     </main>
 
